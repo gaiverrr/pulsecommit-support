@@ -1,0 +1,46 @@
+name: Feature request
+description: Describe the user outcome you want, without prescribing an implementation.
+title: "[Feature]: "
+labels:
+  - enhancement
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the result that would help you and why. The implementation may differ from your initial idea.
+
+        **This issue is public. Do not include Health exports, GitHub or Telegram tokens, Telegram chat IDs, or personal health metrics. Redact names and other identifying information.**
+
+  - type: textarea
+    id: desired-outcome
+    attributes:
+      label: Desired user outcome
+      description: What should you be able to accomplish with Pulse Commit?
+      placeholder: "I want to … so that …"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-obstacle
+    attributes:
+      label: Current obstacle
+      description: What is difficult or impossible today? Use invented or redacted examples.
+    validations:
+      required: true
+
+  - type: textarea
+    id: success
+    attributes:
+      label: What would success look like?
+      description: Describe the observable result, without requiring a particular technical approach.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: privacy-check
+    attributes:
+      label: Privacy check
+      options:
+        - label: I confirm this request contains no Health exports, tokens, chat IDs, personal health metrics, or other identifying information.
+          required: true

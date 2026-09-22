@@ -1,0 +1,85 @@
+name: Bug report
+description: Report reproducible unexpected behavior without sharing sensitive data.
+title: "[Bug]: "
+labels:
+  - bug
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem.
+
+        **This issue is public. Do not include Health exports, GitHub or Telegram tokens, Telegram chat IDs, or personal health metrics. Redact names, repository details, message contents, and other identifying information.**
+
+        For a suspected security vulnerability, stop here and use the private instructions in the repository's Security Policy.
+
+  - type: input
+    id: app-version
+    attributes:
+      label: Pulse Commit version and build
+      description: The version appears in Settings. Add the TestFlight build number or Home build identifier if available; otherwise say the build is unknown.
+      placeholder: "Example: 1.0 (build 1), or 1.0 (build unknown)"
+    validations:
+      required: true
+
+  - type: input
+    id: ios-version
+    attributes:
+      label: iOS version
+      placeholder: "Example: iOS 17.7"
+    validations:
+      required: true
+
+  - type: input
+    id: device-model
+    attributes:
+      label: Device model
+      placeholder: "Example: iPhone 15 Pro"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Use a minimal example with invented or redacted values.
+      placeholder: |
+        1. Open …
+        2. Choose …
+        3. Observe …
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: What did you expect Pulse Commit to do?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: What happened instead? Keep all values non-sensitive.
+    validations:
+      required: true
+
+  - type: textarea
+    id: sanitized-error
+    attributes:
+      label: Sanitized error message
+      description: Copy the exact error after removing sensitive or identifying values. Enter "None shown" if no error appeared.
+      render: text
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: privacy-check
+    attributes:
+      label: Privacy check
+      options:
+        - label: I confirm this report contains no Health exports, tokens, chat IDs, personal health metrics, or other identifying information.
+          required: true
